@@ -1,0 +1,30 @@
+<%-include ('../partials/header'); %>
+
+<!-- change items to match current api -->
+ 
+<main class="main main-beers container">
+    <h2 class="main-h2"><%= name %></h2>
+    <section class="section section-beers">
+        <div class="row">
+                    <!-- name, image,, price reviews, rating -->
+        <% data.forEach(item => { %>
+            <div class="col-md-3">
+                <figure class="figure beer-figure w-100" class="row justify-content-around">
+                    <a href="/beers/<%= item.id %>" class="beer-link">
+                        <img src="<%= item.image %>" alt="<%= item.name %>" class="img-fluid figure-img cooler-image w-100">
+
+                        <figcaption class="figcaption figure-caption figcap-beer"><%= item.name %></figcaption>
+                        <figcaption class="figcaption figure-caption figcap-price"><%= item.price %></figcaption>
+                        <% if(item.rating.reviews != NaN || item.rating.average != NaN){ %>
+                            <figcaption class="figcaption figure-caption figcap-rating">Reviews:  <%= item.rating.reviews %>        Rating:  <%= Math.floor(item.rating.average) %></figcaption>
+                            <% } %>
+                    </a>
+                </figure>                  
+            </div>
+ 
+        <% }) %>
+        </div>
+    </section>
+</main>
+ 
+<%-include ('../partials/footer'); %>

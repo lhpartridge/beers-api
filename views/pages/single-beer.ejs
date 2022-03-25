@@ -1,0 +1,32 @@
+<%- include('../partials/header'); %>
+ 
+<main class="main main-single container">
+    <!-- <h2 class="main-h2 text-center"><%= name %></h2> -->
+    <section class="section section-single  row">
+ 
+    <!-- previous and next -->
+ 
+        <div class="prev-and-next d-flex  justify-content-between">
+            <p class="prev">
+                <% if(data.id > 1) { %>
+                    <a href="/beers/<%= data.id - 1 %> ">Previous beer</a>
+            <% } %>
+            </p>
+            <p class="next">
+                <% if(data.id +1 < count) { %>
+                    <a href="/beers/<%= data.id + 1 %> ">Next beer</a>
+            <% } %>
+            </p>
+        </div>
+    </section>
+
+    <section class="section section-single row justify-content-around">
+        <figure class="figure figure-single col-md-6 d-block text-center">
+            <img src="<%= data.image %>" alt="<%= name %>" class="img-fluid">
+            <figcaption class="figcaption figcap-single">Price:  <%= data.price %></figcaption>
+            <figcaption class="figcaption figcap-single">Reviews:  <%= data.rating.reviews %>    Rating: <%= Math.floor(data.rating.average) %></figcaption>
+        </figure>
+    </section>
+</main>
+ 
+<%- include('../partials/footer'); %>

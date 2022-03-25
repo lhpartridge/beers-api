@@ -1,0 +1,36 @@
+<%- include('../partials/header'); %>
+   
+<main class="main main-home container">
+
+    <h2 class="home-header text-center">welcome to my beers page</h2>
+    <!-- <img src="<%= data[Math.floor(Math.random() * data.length)].image %>"  alt="home image" class="img-fluid home-image"> -->
+
+<!-- carousel adapted from Bootstrap 5.1 -->
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade row" data-bs-ride="carousel">
+    <div class="carousel-inner col-md-10">
+           <% let i = Math.floor(Math.random() * data.length) %>
+        
+        <div class="carousel-item active">
+        <img src="<%= data[i].image %>" class="d-block  img-fluid home-image" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="<%= data[i - 1].image %>" class="d-block   img-fluid home-image" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="<%= data[i + 1].image %>" class="d-block   img-fluid home-image" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</main>
+
+<%- include('../partials/footer'); %>
