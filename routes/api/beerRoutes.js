@@ -20,14 +20,15 @@ router.get('/', (req, res) => {
         .then(data => {
             res.render('pages/beers', {
                 title: 'All Beers',
-                name: 'Beer List',
+                name: 'Beer Cooler',
+                body: 'all',
                 data
             })
         })
 })
  
 //single-beer
-//localhost:3000/cartoons/:id
+//localhost:3000/beers/:id
 router.get('/:id', (req, res) => {
     const id = req.params.id
     const URL = `https://api.sampleapis.com/beers/ale/${id}`
@@ -39,6 +40,7 @@ router.get('/:id', (req, res) => {
                 res.render('pages/single-beer', {
                     title: `${data.name}`,
                     name: `${data.name}`,
+                    body: 'single',
                     data
                 })
             } else {

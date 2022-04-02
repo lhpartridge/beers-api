@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
             res.render('pages/home', {
                 title: 'Beers API',
                 name: "Beer",
+                body: 'home',
                 data
         })
     })
