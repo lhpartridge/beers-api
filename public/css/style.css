@@ -2,10 +2,13 @@
     --prim: #101111;
     --sec: #7c2e04;
     --tert: #7c2e04;
+    --bgColor: #ffd30e;
+    --headerColor: #2e773d;
     --textColor:  #eff;
-    --headerFont: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --textFont:'Julius Sans One', sans-serif;
-    --subheaderFont: 'Gowun Batang', serif;
+    --headerFont: 'UnifrakturCook','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --textFont:'Frijole','Julius Sans One', sans-serif;
+    --subheaderFont: 'Frijole','Gowun Batang', serif;
+
 }
 
 * {box-sizing: border-box;}
@@ -13,13 +16,21 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffd30e;
+    background-color: var(--bgColor);
     /* background-image: url("../media/beer_background.gif") */
+    /* background-image: url("../media/beach_beer_cooler.jpg") */
 
 }
 
 .home, .all {
-     background-image: url("../css/media/beer_background.gif") 
+     background-image: url("../media/beer_background.gif");
+     background-color: var(--bgColor);
+}
+
+.single {
+    background-image: url("/media/beach_beer_cooler.jpg");
+    background-size: cover;
+    background-color: var(--bgColor);
 }
 
 header {
@@ -28,33 +39,31 @@ header {
 
 .header-h1, h1, h2 {
     padding: 20px 0;
-    color: var(--textColor);
-    font-family: 'Trebuchet MS', sans-serif;
+    color: var(--headerColor);
+    font-family: var(--headerFont);
     text-transform: capitalize;
     text-align: center;
 }
 
-.aside-header {
-    color: var(--textColor);
-    font-family: var(--textFont);
-    font-weight: 700;
-}
-
-
 a, .nav-link {
+    font-size: 32px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--textColor);
+    color: var(--headerColor);
+    font-family: var(--subheaderFont);
     text-decoration: none;
 }
 
-a:hover {
-    color: #229900;
+.single a, .single .nav-link {
+    color: var(--textColor);
 }
 
-.text {
-    color: var(--textColor);
-    font-family: var(--headerFont);
+.single a:hover, .single .nav-link:hover {
+    color: var(--headerColor);
 }
+
+
+
+
 
 /* header */
 .top-nav a {
@@ -95,15 +104,13 @@ a:hover {
     font-weight: 600;
 }
 
-.nutrition-item {
-    font-size: 20px;
-}
 .figure {
     border-radius: 8%;}
 
 .figcaption {
     padding: 8px;
-    font-size: 42px;
+    margin-left: 100px;
+    font-size: 32px;
     font-family: var(--headerFont);
     background-color: #f8ebb2;
 }
@@ -118,15 +125,40 @@ a:hover {
     /* max-height: 300px; */
 }
 
-.single-image {
-    min-width: 100px;
+.single-beer-div {
+    position: relative;
+    display: block;
+    justify-items: end;
 }
 
-.figure-single {
+.single-beer-info {
+    padding-top: 400px;
+}
+
+.single-image {
+    position: absolute;
+    padding-top: 180px;
+    right: 200px;
+    /* min-width: 200px; */
+    /* left: 100px; */
+}
+
+.text, .single .figcap-single {
+    color: var(--headerColor);
+    font-family: var(--textFont);
+}
+
+.figcap-single {
+    /* font-family: sans-serif; */
+    font-size: 24px;
+    color: var(--headerColor);
+}
+
+/* .figure-single {
     color: var(--textColor);
     font-size: 24px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+} */
 
 .preparation {
     background-color: var(--textColor);
@@ -138,7 +170,11 @@ a:hover {
 }
 
 .footer {
-    color: var(--textColor);
+    color: var(--headerColor);
     font-family: var(--textFont);
     font-weight: 900;
+}
+
+a .text {
+    color: var(--headerColor);
 }

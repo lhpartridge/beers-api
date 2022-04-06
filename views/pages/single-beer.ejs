@@ -20,12 +20,17 @@
         </div>
     </section>
 
-    <section class="section section-single row justify-content-center">
-        <figure class="figure figure-single col-md-4 d-block text-center">
-            <img src="<%= data.image %>" alt="<%= name %>" class="img-fluid">
-            <figcaption class="figcaption figcap-single">Price:  <%= data.price %></figcaption>
-            <figcaption class="figcaption figcap-single">Rating: <%= Math.floor(data.rating.average) %></figcaption>
-            <figcaption class="figcaption figcap-single">Reviews:  <%= data.rating.reviews %></figcaption>
+    <section class="section section-single row justify-content-end">
+        <figure class="figure figure-single  col-md-4 d-block ">
+            <div class="single-beer-div row ">
+                <img src="<%= data.image %>" alt="<%= name %>" class="img-fluid d-block col single-image">
+
+                <div class="single-beer-info d-block">
+                    <figcaption class="figcaption figcap-single info-text">Price:  <%= data.price %></figcaption>
+                    <figcaption class="figcaption figcap-single info-text">Rating: <%= Math.floor(data.rating.average) %></figcaption>
+                    <figcaption class="figcaption figcap-single info-text">Reviews:  <%= data.rating.reviews %></figcaption>
+                </div>
+            </div>
         </figure>
     </section>
 </main>
